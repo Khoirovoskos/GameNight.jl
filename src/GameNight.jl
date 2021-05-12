@@ -326,12 +326,12 @@ for i in 1:25
   display(fig)
 end
 
-# safehouses Duet
+# safehouses duos
 
 # Is current player 1 or 2?
 current_player = false
 # Track number of turns for time limit
-duet_turn = 1
+duos_turn = 1
 
 R"""
 if(!require(ggplot2)) {
@@ -344,7 +344,7 @@ if(!require(gmailr)) {
     require(gmailr)
     }
 
-send_duet_card <- function(giver1 = NULL, giver2 = NULL, sender = "safehouses@gmail.com", key = key_val, secret = secret_val) {
+send_duos_card <- function(giver1 = NULL, giver2 = NULL, sender = "safehouses@gmail.com", key = key_val, secret = secret_val) {
 
 if (is.null(giver1) || is.null(giver2)) {warning("Two clue givers must be designated!")} 
 
@@ -436,19 +436,19 @@ gm_send_message(email)
 """
 
 # Each player's value is a separate column in the layout matrix
-function create_duet_matrix()
+function create_duos_matrix()
   coords = [repeat(1:5, outer = 5) repeat(1:5, inner = 5) [R"KEY_LAYOUT$player_1"...] [R"KEY_LAYOUT$player_2"...] word_list[(25 * safehouses_game[1] + 1):(25 * safehouses_game[1] + 25)] repeat([:grey94], 25) repeat([:grey94], 25)]
 end 
 
-function play_safehouses_duet(secret_path = "GameNight/assets/client_secret.json", turn_limit = 9)
+function play_safehouses_duos(secret_path = "GameNight/assets/client_secret.json", turn_limit = 9)
   read_secret(secret_path)
   println("E-mail address of first clue giver:")
   email_1 = readline()
   println("E-mail address of second clue giver:")
   email_2 = readline()
   @rput email_1 email_2
-  R"send_duet_card(giver1 = email_1, giver2 = email_2)"
-  cards = create_duet_matrix()
+  R"send_duos_card(giver1 = email_1, giver2 = email_2)"
+  cards = create_duos_matrix()
   
   global safehouses_game = safehouses_game
   safehouses_game[1] += 1
@@ -500,11 +500,11 @@ function play_safehouses_duet(secret_path = "GameNight/assets/client_secret.json
 	  current_player = ~current_player
 	
   # Each click also increments the turn counter
-	  global duet_turn = duet_turn
-	  duet_turn += 1
+	  global duos_turn = duos_turn
+	  duos_turn += 1
 	  
     # If turn counter exceeds limit, game ends
-	  if duet_turn > turn_limit
+	  if duos_turn > turn_limit
 	    win = GtkWindow("safehouses", 400, 200)
       game_result = "Time's Up! Game Over!"
     	b = GtkButton(game_result)
@@ -512,7 +512,7 @@ function play_safehouses_duet(secret_path = "GameNight/assets/client_secret.json
     	showall(win)
 	  end
 	  
-	  player_button.label = "Player $(1 + current_player): Turn $(duet_turn) of $(turn_limit)"
+	  player_button.label = "Player $(1 + current_player): Turn $(duos_turn) of $(turn_limit)"
 	  
     # Set cards to show colors for next player
 	  for i in 1:25
