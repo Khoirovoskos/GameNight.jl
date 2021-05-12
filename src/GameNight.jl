@@ -213,17 +213,17 @@ function word_search(time_limit = 0)
   end
 end
 
-# celebrity
+# Tutti Frutti
 
 # Create game counter to reduce number of repeated prompts
-scatter_game = [0]
+tutti_frutti_game = [0]
 
 # Read prompts from file and randomize
 prompts = shuffle(CSV.File("GameNight/assets/prompts.csv", header = false).Column1)
 
-function play_celebrity(time_limit = 0)
+function play_tutti_frutti(time_limit = 0)
   # Select current set of prompts based on game number
-  current_prompts = prompts[(12 * scatter_game[1] + 1):(12 * scatter_game[1] + 12)]
+  current_prompts = prompts[(12 * tutti_frutti_game[1] + 1):(12 * tutti_frutti_game[1] + 12)]
   # Select key letter for responses
   letter = "ABCDEFGHIJKLMNOPRSTW"[rand(1:20, 1)]
   
@@ -246,11 +246,11 @@ function play_celebrity(time_limit = 0)
   end
   
   # Increment game counter for next round.
-  scatter_game[1] += 1
+  tutti_frutti_game[1] += 1
   
   # If game counter runs over number of prompts, reset prompts and start over
-  if (scatter_game[1] * 12 + 12) > size(prompts)[1]
-    scatter_game[1] = 0
+  if (tutti_frutti_game[1] * 12 + 12) > size(prompts)[1]
+    tutti_frutti_game[1] = 0
   end
 end
 
