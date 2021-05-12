@@ -15,9 +15,16 @@ Safehouses Duos| `play_safehouses_duos()`                                    | A
 
 ## Installation Notes
 
-These games are implemented in [the Julia language](https://julialang.org/). After installing and opening the Julia compiler, type the following into the command line: `]add https://github.com/Khoirovoskos/GameNight.jl`
-    
+These games are implemented in [the Julia language](https://julialang.org/). After installing and opening the Julia compiler, type the following into the command line: 
+```
+    using Pkg
+    Pkg.add https://github.com/Khoirovoskos/GameNight.jl
+    using GameNight
+```
 
 ### Installation Details for Safehouses
 
 Safehouses and Safehouses Duos rely on the [`gmailr` R package](https://cran.r-project.org/web/packages/gmailr/) and [RCall.jl](https://juliainterop.github.io/RCall.jl/stable/). Refer to those packages' respective documentation for installation details. The game host will need to replace the client_secret.json file in the assets folder with a Google API key, which can be obtained through developers.google.com.
+
+## Usage Details for Games
+*forthcoming*
