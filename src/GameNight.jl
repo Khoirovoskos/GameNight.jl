@@ -1,4 +1,4 @@
-using Gtk, CSV, RCall, GLMakie, AbstractPlotting, Colors, JSON, Gtk, RCall, Random
+using Gtk, CSV, RCall, GLMakie, AbstractPlotting, Colors, JSON, Random
 # R instance requires ggplot2, and gmailr
 
 # Read Gmail token and send to R environment
