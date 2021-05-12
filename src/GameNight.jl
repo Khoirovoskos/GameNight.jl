@@ -117,9 +117,8 @@ turn = [1]
 
 function play_roll_and_write(player_list::Array{String, 1})
   # Pre-fill rolls based on number of players
-  roll_and_writeRolls = [repeat(player_list, 48), rand(1:6, 6, 48 * size(player_list)[1])]
-  # Default all dice to unlocked
-  roll_and_writeLocks = repeat([false], 6)
+  roll_and_write_rolls = [repeat(player_list, 48), rand(1:6, 6, 48 * size(player_list)[1])]
+
   # Colors for dice when unlocked
   cellcolors = [:grey, RGBf0(0.94, 0.5, 0.5), RGBf0(1, 1, 0), RGBf0(0.25, 0.94, 0.25), RGBf0(0.5, 0.5, 0.94), :white, :white, :grey]
   
@@ -132,7 +131,7 @@ function play_roll_and_write(player_list::Array{String, 1})
 
   # Each die is a button, plus forward and back buttons
   fig[2,:] = buttongrid = GridLayout(tellwidth = false)
-  buttonlabels = string.(["<", roll_and_writeRolls[2][:, 1]..., ">"])
+  buttonlabels = string.(["<", roll_and_write_rolls[2][:, 1]..., ">"])
   buttons = buttongrid[1, 1:8] = [Button(fig, label = buttonlabels[i], height = 175, width = 200, textsize = 40.0f0, buttoncolor = cellcolors[i], buttoncolor_hover = cellcolors[i], strokecolor = :black) for i = 1:8]
   
   # Back button decrements turn counter, plays silly message to tease players
@@ -141,29 +140,29 @@ function play_roll_and_write(player_list::Array{String, 1})
     if turn[1] >= 2
 	    turn[1] -= 1
 	    for i in 2:7
-	      buttons[i].label = string.(roll_and_writeRolls[2][i - 1, turn[1]])
+	      buttons[i].label = string.(roll_and_write_rolls[2][i - 1, turn[1]])
 	    end
-	    supertitle.text = roll_and_writeRolls[1][turn[1]]
+	    supertitle.text = roll_and_write_rolls[1][turn[1]]
 	  end
   end
   
   # Forward button increments turn counter, plays chime to notify players
   on(buttons[8].clicks) do n
     global turn = turn
-    if turn[1] <= size(roll_and_writeRolls[2])[2]
+    if turn[1] <= size(roll_and_write_rolls[2])[2]
 	    turn[1] += 1
 	    for i in 2:7
-	      buttons[i].label = string.(roll_and_writeRolls[2][i - 1, turn[1]])
+	      buttons[i].label = string.(roll_and_write_rolls[2][i - 1, turn[1]])
 	    end
-	    supertitle.text = roll_and_writeRolls[1][turn[1]]
+	    supertitle.text = roll_and_write_rolls[1][turn[1]]
 	  end
   end
   
-  # Clicking the colored dice toggles between locked (grey) and unlocked (default color)
+  # Clicking the colored dice toggles between locked (black) and unlocked (default color)
   for i in 2:5
     on(buttons[i].clicks) do n
       buttons[i].buttoncolor = 
-	    colordiff(buttons[i].buttoncolor[], RGBf0(0.5, 0.5, 0.5)) == 0 ? cellcolors[i] : RGBf0(0.5, 0.5, 0.5)
+	    colordiff(buttons[i].buttoncolor[], RGBf0(0, 0, 0)) == 0 ? cellcolors[i] : RGBf0(0, 0, 0)
 	  end
   end
 
@@ -485,7 +484,6 @@ function play_safehouses_duet(secret_path = "GameNight/assets/client_secret.json
           push!(win,b)
   		    showall(win)
         end
-			
         # If touched card is green or an assassin, set both players as having touched the card
 		    if cards[Int(i), 3 + current_player] <= 1.0
   	      cards[Int(i), 6 + ~current_player] = cards[Int(i), 6 + current_player]
