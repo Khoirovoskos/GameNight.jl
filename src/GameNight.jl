@@ -1,5 +1,5 @@
 using Gtk, CSV, RCall, GLMakie, AbstractPlotting, Colors, JSON, Gtk, RCall, Random
-# R instance requires beepr, ggplot2, and gmailr
+# R instance requires ggplot2, and gmailr
 
 # Read Gmail token and send to R environment
 function read_secret(secret_location)
@@ -144,7 +144,6 @@ function play_roll_and_write(player_list::Array{String, 1})
 	      buttons[i].label = string.(roll_and_writeRolls[2][i - 1, turn[1]])
 	    end
 	    supertitle.text = roll_and_writeRolls[1][turn[1]]
-	    R"beepr::beep(6)"
 	  end
   end
   
@@ -157,7 +156,6 @@ function play_roll_and_write(player_list::Array{String, 1})
 	      buttons[i].label = string.(roll_and_writeRolls[2][i - 1, turn[1]])
 	    end
 	    supertitle.text = roll_and_writeRolls[1][turn[1]]
-	    R"beepr::beep(5)"
 	  end
   end
   
@@ -323,9 +321,6 @@ for i in 1:25
           push!(win,b)
 	  	    showall(win)
         end
-	  	if cards[Int(i), 3] === 3.0 # If touched card was a bystander, 'Wilhelm scream!'
-          R"beepr::beep(9)"
-        end
       end
     end
   # Manually opening figure versus opening as function side effect seems to be more stable
@@ -490,9 +485,7 @@ function play_safehouses_duet(secret_path = "GameNight/assets/client_secret.json
           push!(win,b)
   		    showall(win)
         end
-  		  if cards[Int(i), 3 + current_player] === 2.0
-          R"beepr::beep(9)"
-        end
+			
         # If touched card is green or an assassin, set both players as having touched the card
 		    if cards[Int(i), 3 + current_player] <= 1.0
   	      cards[Int(i), 6 + ~current_player] = cards[Int(i), 6 + current_player]
