@@ -27,7 +27,6 @@ These games are implemented in [the Julia language](https://julialang.org/). Aft
 Safehouses and Safehouses Duos rely on the [`gmailr` R package](https://cran.r-project.org/web/packages/gmailr/) and [RCall.jl](https://juliainterop.github.io/RCall.jl/stable/). Refer to those packages' respective documentation for installation details. The game host will need to replace the client_secret.json file in the assets folder with a Google API key, which can be obtained through developers.google.com.
 
 ## Usage Details for Games
-*forthcoming*
 
 ### Safehouses
 Start game with `play_safehouses()`. The host will be prompted to enter two e-mail addresses, one for each team's clue giver. Clue givers will receive their key cards via e-mail. Colors and symbols on the key cards indicate which cells on the board belong to each team. Red and Blue are the respective teams, Yellow are neutral, and Black is the assassin. Finding the assassin is an automatic game over. 
