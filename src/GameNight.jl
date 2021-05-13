@@ -773,7 +773,7 @@ function draw_starting_cards()
   global ax2 = ax2
   global ax = ax
   global startingcards = startingcards
-  startingcards = startingcards[shuffe([1:12...]), :]
+  startingcards = startingcards[shuffle([1:12...]), :]
 
   # Prepare board and draw starting cards for each named player
   for i in 2:3
