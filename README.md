@@ -30,9 +30,26 @@ Safehouses and Safehouses Duos rely on the [`gmailr` R package](https://cran.r-p
 *forthcoming*
 
 ### Safehouses
+Start game with `play_safehouses()`. The host will be prompted to enter two e-mail addresses, one for each team's clue giver. Clue givers will receive their key cards via e-mail. Colors and symbols on the key cards indicate which cells on the board belong to each team. Red and Blue are the respective teams, Yellow are neutral, and Black is the assassin. Finding the assassin is an automatic game over. 
+
+![Safehouses board](/images/key%20card.jpg)
+
+A board will appear for all players to see, but the colors from the key card are hidden.
+
+![Safehouses board](/images/Safehouses1.JPG)
+
+Clue givers provide hints, and teams make their guesses. The host confirms guesses by clicking on a cell to reveal its color.
+
+![Revealed Safehouses board](/images/Safehouses2.JPG)
+
 *Note:* On some machines, Safehouses will randomly close during gameplay. If this happens, type `fig` in the Julia console to bring up the game again where you left off.
 
 ### Safehouses Duos
+Start game with `play_safehouses_duos()`. Details are much the same as regular Safehouses, except there is an optional turn counter argument (defaults to 9 turns). Each player gets a different key card, and green are the two players' targets. The e-mail subject line indicates whether the receiving player is Player 1 or Player2.
+
+The host clicks the button at the top of the board to toggle the active clue-giver. PLayer 1 gives clues (and Player 2 guesses) when the button reads "Player 1."
+
+![Safehouses Duos board](/images/Safehouses%20Duos.JPG)
 
 ### Roll and Write
 Start game with `play_roll_and_write(player_name)`, where `player_names` is a vector of names formatted like `["Alice", "Bob", "Charlie"]`.
