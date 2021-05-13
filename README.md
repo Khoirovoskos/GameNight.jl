@@ -47,7 +47,7 @@ Clue givers provide hints, and teams make their guesses. The host confirms guess
 ### Safehouses Duos
 Start game with `play_safehouses_duos()`. Details are much the same as regular Safehouses, except there is an optional turn counter argument (defaults to 9 turns). Each player gets a different key card, and green are the two players' targets. The e-mail subject line indicates whether the receiving player is Player 1 or Player2.
 
-The host clicks the button at the top of the board to toggle the active clue-giver. PLayer 1 gives clues (and Player 2 guesses) when the button reads "Player 1."
+The host clicks the button at the top of the board to toggle the active clue-giver. Player 1 gives clues (and Player 2 guesses) when the button reads "Player 1."
 
 ![Safehouses Duos board](/images/Safehouses%20Duos.JPG)
 
