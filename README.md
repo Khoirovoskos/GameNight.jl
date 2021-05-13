@@ -32,17 +32,17 @@ Safehouses and Safehouses Duos rely on the [`gmailr` R package](https://cran.r-p
 Start game with `play_roll_and_write(player_name)`, where `player_names` is a vector of names formatted like `["Alice", "Bob", "Charlie"]`.
 Once loaded, the host can advance through rolls or back up using the far-right and far-left buttons, respectively. Each die can be toggled as active or locked by clicking on it.
 
-![Roll and Write board](/images/Roll and Write 1.jpg)
-![Roll and Write board with one die locked](/images/Roll and Write 2.jpg)
+![Roll and Write board](/images/Roll%20and%20Write%201.JPG)
+![Roll and Write board with one die locked](/images/Roll%20and%20Write%202.JPG)
 
 ### Draw Again
 Start game with `play_draw_again()`. A pop-up window will appear with six text entry boxes. Enter up to six player names and then click the Start Game button. The game board will appear with starting cards for each player. 
 
-![Specify player names in the pop-up window](/images/Draw Again 1.jpg)
+![Specify player names in the pop-up window](/images/Draw%20Again%201.JPG)
 
 After that, clicking the Draw Again button on the board will clear the board and draw two cards in the center column. Clicking on each player's name will draw another card for that player.
 
-![Draw Again board](/images/Draw Again 2.jpg)
+![Draw Again board](/images/Draw%20Again%202.JPG)
 
 ### Word Search
 
