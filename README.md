@@ -58,6 +58,6 @@ Start game with `word_search(time_limit)` where time_limit is a number of second
 ![Word Search grid](/images/Word%20Search.JPG)
 
 ### Tutti Frutti
-Start game with `word_search(time_limit)` where time_limit is a number of seconds to play. A window will appear with a grid of letters. After the time limit elapses, a pop-up window will notify players.
+Start game with `play_tutti_frutti(time_limit)` where time_limit is a number of seconds to play. A window will appear with a list of 12 prompts and a letter in the upper left corner. After the time limit elapses, a pop-up window will notify players.
 
-![Word Search grid](/images/Tutti%Frutti.JPG)
+![Tutti Frutti board](/images/Tutti%20Frutti.JPG)
