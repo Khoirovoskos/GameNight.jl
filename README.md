@@ -37,7 +37,7 @@ if(!require(gmailr)) {
 ```
 
 5. After the packages load, close Rgui.
-6. pen the Julia console and type the following:
+6. Open the Julia console and type the following:
 
 ```
 ] activate GameNight.jl-main
