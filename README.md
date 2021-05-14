@@ -19,9 +19,10 @@ These games are implemented in [the Julia language](https://julialang.org/). Aft
 
 Safehouses and Safehouses Duos rely on the [`gmailr` R package](https://cran.r-project.org/web/packages/gmailr/) and [RCall.jl](https://juliainterop.github.io/RCall.jl/stable/). Refer to those packages' respective documentation for installation details. The game host will need to replace the client_secret.json file in the assets folder with a Google API key, which can be obtained through developers.google.com.
 
-The most reliable way to use RCall is to [download R](https://cran.r-project.org) and install it. Find and copy the path to the folder containing the R executable (e.g., C:/Program Files/R/R-4.0.5/bin/x64 on 64-bit Windows systems). Note that any backslashes (\\) need to be changed to forward slashes (/).
-
-Run the R executable (Rgui) and run the following block of code:
+The most reliable way to use RCall is to do the following: 
+1. [download R](https://cran.r-project.org) and install it. 
+2. Find and copy the path to the folder containing the R executable (e.g., C:/Program Files/R/R-4.0.5/bin/x64 on 64-bit Windows systems). Note that any backslashes (\\) need to be changed to forward slashes (/).
+3. Run the R executable (Rgui) and run the following block of code:
 
 ```
 if(!require(ggplot2)) {
@@ -35,9 +36,8 @@ if(!require(gmailr)) {
     }
 ```
 
-After the packages load, close Rgui.
-
-Next, open the Julia console and type the following:
+5. After the packages load, close Rgui.
+6. pen the Julia console and type the following:
 
 ```
 ] activate GameNight.jl-main
