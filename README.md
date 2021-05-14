@@ -15,7 +15,7 @@ Tutti Frutti   | `play_tutti_frutti(180)`                                    | A
 
 ## Installation Notes
 
-These games are implemented in [the Julia language](https://julialang.org/). After installing the Julia compiler, download this project and extract the Zip folder into Julia's bin folder.
+These games are implemented in [the Julia language](https://julialang.org/). After installing the Julia compiler, download this project as a ZIP folder and extract the GameNight.jl-main folder into Julia's bin folder. Do not re-name the folder.
 
 Safehouses and Safehouses Duos rely on the [`gmailr` R package](https://cran.r-project.org/web/packages/gmailr/) and [RCall.jl](https://juliainterop.github.io/RCall.jl/stable/). Refer to those packages' respective documentation for installation details. The game host will need to replace the client_secret.json file in the assets folder with a Google API key, which can be obtained through developers.google.com.
 
