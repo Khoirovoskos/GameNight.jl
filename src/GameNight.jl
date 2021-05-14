@@ -219,7 +219,7 @@ end
 tutti_frutti_game = [0]
 
 # Read prompts from file and randomize
-prompts = shuffle(CSV.File("GameNight/assets/prompts.csv", header = false).Column1)
+prompts = shuffle(CSV.File("GameNight.jl-main/assets/prompts.csv", header = false).Column1)
 
 function play_tutti_frutti(time_limit = 0)
   # Select current set of prompts based on game number
@@ -257,7 +257,7 @@ end
 # safehouses
 
 # Read in list of words and shuffle
-word_list = shuffle(CSV.File("GameNight/assets/words.csv").word)
+word_list = shuffle(CSV.File("GameNight.jl-main/assets/words.csv").word)
 
 # Set game counter to track games and reduce repetition of words
 safehouses_game = [0]
@@ -267,7 +267,7 @@ function create_word_matrix()
   coords = [repeat(1:5, inner = 5) repeat(1:5, outer = 5) [R"KEY_LAYOUT$content"...] word_list[(25 * safehouses_game[1] + 1):(25 * safehouses_game[1] + 25)] repeat([0], 25)]
 end 
 
-function play_safehouses(secret_path = "GameNight/assets/client_secret.json")
+function play_safehouses(secret_path = "GameNight.jl-main/assets/client_secret.json")
   read_secret(secret_path)
   println("E-mail address of first clue giver:")
   email_1 = readline()
@@ -440,7 +440,7 @@ function create_duos_matrix()
   coords = [repeat(1:5, outer = 5) repeat(1:5, inner = 5) [R"KEY_LAYOUT$player_1"...] [R"KEY_LAYOUT$player_2"...] word_list[(25 * safehouses_game[1] + 1):(25 * safehouses_game[1] + 25)] repeat([:grey94], 25) repeat([:grey94], 25)]
 end 
 
-function play_safehouses_duos(secret_path = "GameNight/assets/client_secret.json", turn_limit = 9)
+function play_safehouses_duos(secret_path = "GameNight.jl-main/assets/client_secret.json", turn_limit = 9)
   read_secret(secret_path)
   println("E-mail address of first clue giver:")
   email_1 = readline()
