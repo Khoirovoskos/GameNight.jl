@@ -1,5 +1,7 @@
-println(pathof(@__MODULE__))
-
+function path_test()
+	println(pathof(@__MODULE__))
+end
+	
 using Gtk, CSV, RCall, GLMakie, AbstractPlotting, Colors, JSON, Random
 # R instance requires ggplot2, and gmailr
 
