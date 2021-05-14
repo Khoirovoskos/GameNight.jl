@@ -1,10 +1,6 @@
 using Gtk, CSV, RCall, GLMakie, AbstractPlotting, Colors, JSON, Random
 # R instance requires ggplot2, and gmailr
 
-function path_test()
-	println(pathof(@__MODULE__))
-end
-
 # Read Gmail token and send to R environment
 function read_secret(secret_location)
   secret_json = JSON.parse(read(secret_location, String))
