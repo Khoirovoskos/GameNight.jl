@@ -40,7 +40,8 @@ if(!require(gmailr)) {
 6. Open the Julia console and type the following:
 
 ```
-] activate GameNight.jl-main
+using Pkg
+Pkg.activate("GameNight.jl-main")
 include("GameNight.jl-main/src/GameNight.jl")
 ```
 
