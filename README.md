@@ -1,4 +1,4 @@
-# GameNight.jl
+![GameNight.jl logo](/images/Game%20Night%20Social%20Logo.png)
 
 A small library of games to play over video-conference calls, motivated by the COVID-19 pandemic.
 
