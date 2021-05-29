@@ -528,14 +528,14 @@ end
 
 # Draw Again
 
-# Function to clear out a subplot
+#= Function to clear out a subplot
 function Base.empty!(ax::Axis)
   while !isempty(ax.scene.plots)
     plot = first(ax.scene.plots)
     delete!(ax.scene, plot)
   end
 end
-
+=#
 # Shapes to display for each draw
 shapedeck = 
       [
