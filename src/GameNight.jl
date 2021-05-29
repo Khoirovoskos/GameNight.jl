@@ -1,5 +1,7 @@
 module GameNight
 
+export word_search, play_roll_and_write, play_tutti_frutti, play_safehouses, play_safehouses_duos, play_draw_again
+
 using Gtk, CSV, RCall, GLMakie, AbstractPlotting, Colors, JSON, Random
 # R instance requires ggplot2, and gmailr
 
