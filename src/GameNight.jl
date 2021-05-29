@@ -1,3 +1,5 @@
+module GameNight
+
 using Gtk, CSV, RCall, GLMakie, AbstractPlotting, Colors, JSON, Random
 # R instance requires ggplot2, and gmailr
 
@@ -793,4 +795,6 @@ function draw_starting_cards()
       limits!(ax[i], -2, 2, -2, 2)
     end
   end
+end
+
 end
