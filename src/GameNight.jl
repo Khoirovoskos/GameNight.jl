@@ -533,7 +533,7 @@ end
 # Draw Again
 
 # Function to clear out a subplot
-function Base.empty!(ax::Axis)
+function empty_subplot!(ax::Axis)
   while !isempty(ax.scene.plots)
     plot = first(ax.scene.plots)
     delete!(ax.scene, plot)
@@ -666,11 +666,11 @@ function create_board()
     global shapecards = shapecards
     global locked = locked
     for i in 1:6
-      empty!(ax[i])
+      empty_subplot!(ax[i])
     end
     if (size(shapecards)[1] >= 2)
       for i in 2:3
-        empty!(ax2[i])
+        empty_subplot!(ax2[i])
   	  card_to_plot = shapecards[1, :]
         shapecards = shapecards[2:end, :]
   	  GLMakie.scatter!(
@@ -698,7 +698,7 @@ function create_board()
     global locked = locked
     global shapecards = shapecards
   	if (locked[i] == 0) & (buttons[i].label != " ") & (size(shapecards)[1] >= 1) 
-  	  empty!(ax[i])
+  	  empty_subplot!(ax[i])
   	  card_to_plot = shapecards[1, :]
         shapecards = shapecards[2:end, :]
   	  GLMakie.scatter!(
@@ -781,10 +781,10 @@ function draw_starting_cards()
 
   # Prepare board and draw starting cards for each named player
   for i in 2:3
-    empty!(ax2[i])
+    empty_subplot!(ax2[i])
   end
   for i in 1:6
-    empty!(ax[i])
+    empty_subplot!(ax[i])
     if player_list[i] != ""
       GLMakie.scatter!(fig[player_grids[i][1], player_grids[i][2]],
        .325 .* [startingcards[i, 1]...],
