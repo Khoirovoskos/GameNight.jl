@@ -207,7 +207,7 @@ function word_search(time_limit = 0)
   
   # Place letters into grid
   for i in 1:16
-    text!(values[i, 3], position = (values[i, 1] - 2.5, values[i, 2] - 2.5), align = (:center, :center), textsize = 4)
+    text!(values[i, 3], position = (values[i, 1] - 2.5, values[i, 2] - 2.5), align = (:center, :center), textsize = 8)
   end			
 			
   display(fig)
