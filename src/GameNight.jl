@@ -207,7 +207,7 @@ function word_search(time_limit = 0)
   
   # Place letters into grid
   for i in 1:16
-    text!(values[i, 3], position = (values[i, 1] - 2.5, values[i, 2] - 2.5), align = (:center, :center), textsize = 8)
+    text!(values[i, 3], position = (values[i, 1] - 2.5, values[i, 2] - 2.5), align = (:center, :center), textsize = 96)
   end			
 			
   display(fig)
@@ -237,7 +237,7 @@ function play_tutti_frutti(time_limit = 0)
 
   # Plot prompts on screen
   for i in 12:-1:1
-    text!(last("00" * string(13 - i), 2) * ". " * current_prompts[i], position = (1, i), align = (:left, :center), textsize = 1)
+    text!(last("00" * string(13 - i), 2) * ". " * current_prompts[i], position = (1, i), align = (:left, :center), textsize = 36)
   end
 
   # Add key letter to screen  
