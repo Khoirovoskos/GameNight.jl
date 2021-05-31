@@ -200,23 +200,22 @@ function word_search(time_limit = 0)
   values = [repeat(1:4, outer = 4) repeat(1:4, inner = 4) shuffle(map(x -> rand(x, 1)[1], dice))]
   
   #Set figure dimensions and hide axes
-  f = Figure(resolution = (900, 900))
-  ax = Axis(f[1, 1], aspect = AxisAspect(1))
+  global fig = fig
+  fig = Figure(resolution = (900, 900))
+  ax = Axis(fig[1, 1], aspect = AxisAspect(1))
   hidedecorations!(ax)
   
   # Place letters into grid
   for i in 1:16
     text!(values[i, 3], position = (values[i, 1] - 2.5, values[i, 2] - 2.5), align = (:center, :center), textsize = .75)
-  end
-  
-  return f			
+  end			
 			
-  #=display(f)
+  display(fig)
 
   # Run timer if time limit greater than 0, otherwise play untimed game.
   if time_limit > 0
     timer(time_limit)
-		end=#
+  end
 end
 
 # Tutti Frutti
