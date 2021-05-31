@@ -210,7 +210,7 @@ function word_search(time_limit = 0)
     text!(values[i, 3], position = (values[i, 1] - 2.5, values[i, 2] - 2.5), align = (:center, :center), textsize = .75)
   end			
 			
-  display(fig)
+  fig
 
   # Run timer if time limit greater than 0, otherwise play untimed game.
   if time_limit > 0
