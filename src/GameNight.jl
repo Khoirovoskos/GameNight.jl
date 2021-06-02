@@ -237,7 +237,7 @@ function play_tutti_frutti(time_limit = 0)
 
   # Plot prompts on screen
   for i in 12:-1:1
-    text!(last("00" * string(13 - i), 2) * ". " * current_prompts[i], position = (1, i), align = (:left, :center), textsize = 36)
+    text!(last("00" * string(13 - i), 2) * ". " * current_prompts[i], position = (1, i), align = (:left, :center), textsize = .75, space = :data)
   end
 
   # Add key letter to screen  
