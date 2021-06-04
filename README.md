@@ -29,7 +29,7 @@ The most reliable way to use RCall is to do the following:
 2. Find and copy the path to the folder containing the R executable (e.g., C:/Program Files/R/R-4.0.5/bin/x64 on 64-bit Windows systems). Note that any backslashes (\\) need to be changed to forward slashes (/).
 3. Run the R executable (Rgui) and run the following block of code: `install.packages(c("ggplot2", "gmailr"))`
 4. After the packages load, close Rgui.
-5. Open the Julia console and type the following `ENV["R_HOME"] = "..."` where ... is replaced with the path from Step 2.
+5. Open the Julia console and type the following `ENV["R_HOME"] = "..."` where `...` is replaced with the path from Step 2 (enclosed in double quotation marks..
 6. Enter `using GameNight` into the Julia console.
 
 Step 6 will need to be run every time you open Julia to load the games.
