@@ -27,19 +27,7 @@ Safehouses and Safehouses Duos rely on the [`gmailr` R package](https://cran.r-p
 The most reliable way to use RCall is to do the following: 
 1. [Download R](https://cran.r-project.org) and install it. 
 2. Find and copy the path to the folder containing the R executable (e.g., C:/Program Files/R/R-4.0.5/bin/x64 on 64-bit Windows systems). Note that any backslashes (\\) need to be changed to forward slashes (/).
-3. Run the R executable (Rgui) and run the following block of code:
-
-```
-if(!require(ggplot2)) {
-    install.packages("ggplot2")
-    require(ggplot2)
-    }
-
-if(!require(gmailr)) {
-    install.packages("gmailr")
-    require(gmailr)
-    }
-```
+3. Run the R executable (Rgui) and run the following block of code: `install.packages(c("ggplot2", "gmailr"))`
 
 5. After the packages load, close Rgui.
 6. Open the Julia console and type `using GameNight`
