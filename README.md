@@ -22,7 +22,7 @@ using Pkg
 Pkg.add(url = "https://github.com/Khoirovoskos/GameNight.jl")
 ```
 
-Safehouses and Safehouses Duos rely on the [`gmailr` R package](https://cran.r-project.org/web/packages/gmailr/) and [RCall.jl](https://juliainterop.github.io/RCall.jl/stable/). Refer to those packages' respective documentation for installation details. The game host will need to replace the client_secret.json file in the assets folder with a Google API key, which can be obtained through developers.google.com.
+Safehouses and Safehouses Duos rely on the [`gmailr` R package](https://cran.r-project.org/web/packages/gmailr/) and [RCall.jl](https://juliainterop.github.io/RCall.jl/stable/). Refer to those packages' respective documentation for installation details. The game host will need to replace the client_secret.json file in the assets folder with a Google API key, which can be obtained through [developers.google.com](https://developers.google.com/).
 
 The most reliable way to use RCall is to do the following: 
 1. [Download R](https://cran.r-project.org) and install it. 
