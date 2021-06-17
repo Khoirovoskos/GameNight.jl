@@ -233,7 +233,7 @@ function play_tutti_frutti(time_limit = 0)
   letter = "ABCDEFGHIJKLMNOPRSTW"[rand(1:20, 1)]
   
   f = Figure(resolution = screen_size())
-  Axis(f[1, 1], aspect = DataAspect())
+  ax = Axis(f[1, 1], aspect = DataAspect())
 
   # Plot prompts on screen
   for i in 12:-1:1
@@ -245,6 +245,7 @@ function play_tutti_frutti(time_limit = 0)
 						
   xlims!(0, 15)
   reset_limits!(ax)
+  hidedecorations!(ax)
 
   display(f)
   
