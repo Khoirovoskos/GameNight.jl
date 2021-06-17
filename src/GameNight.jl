@@ -130,7 +130,7 @@ function play_roll_and_write(player_list::Array{String, 1})
   turn = [1]
   
   global fig = fig
-  fig = Figure(resolution = (1200, 900))
+  fig = Figure(resolution = screen_size())
   supertitle = fig[0, :] = Label(fig, player_list[1], textsize = 30)
 
   # Each die is a button, plus forward and back buttons
@@ -201,7 +201,7 @@ function word_search(time_limit = 0)
   
   #Set figure dimensions and hide axes
   global fig = fig
-  fig = Figure(resolution = (900, 900))
+  fig = Figure(resolution = (minimum(screen_size(), minimum(screen_size()))
   ax = Axis(fig[1, 1], aspect = AxisAspect(1))
   hidedecorations!(ax)
   
@@ -232,7 +232,7 @@ function play_tutti_frutti(time_limit = 0)
   # Select key letter for responses
   letter = "ABCDEFGHIJKLMNOPRSTW"[rand(1:20, 1)]
   
-  f = Figure(resolution = (1200, 900))
+  f = Figure(resolution = screen_size())
   Axis(f[1, 1], aspect = DataAspect())
 
   # Plot prompts on screen
@@ -242,6 +242,9 @@ function play_tutti_frutti(time_limit = 0)
 
   # Add key letter to screen  
   f[1, 1, TopLeft()] = Label(f, letter, textsize = 72, halign = :right)
+						
+  xlims!(0, 15)
+  reset_limits!(ax)
 
   display(f)
   
@@ -287,7 +290,7 @@ function play_safehouses(secret_path = joinpath(@__DIR__, "../assets/client_secr
   safehouses_game[1] += 1
 
 global fig = fig
-fig = Figure(resolution = (1200, 900))
+fig = Figure(resolution = screen_size())
 
 # Create matrix of buttons to represent cards
 fig[:,:] = buttongrid = GridLayout(tellwidth = false)
@@ -462,7 +465,7 @@ function play_safehouses_duos(secret_path = joinpath(@__DIR__, "../assets/client
   current_player = false
   
   global fig = fig
-  fig = Figure(resolution = (1200, 900))
+  fig = Figure(resolution = screen_size())
   
   fig[:,:] = buttongrid = GridLayout(tellwidth = false)  
   buttonlabels = cards[:, 5]
@@ -627,7 +630,7 @@ shapedeck =
 function create_board()
 
   global fig = fig
-  fig = Figure(resolution = (1200, 900))
+  fig = Figure(resolution = screen_size())
   # Counter of remaining cards at top of figure window
   supertitle = fig[0, :] = Label(fig, "40 cards remain", textsize = 30)
   
