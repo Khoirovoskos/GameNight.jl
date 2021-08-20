@@ -138,7 +138,7 @@ function play_roll_and_write(player_list::Array{String, 1})
   buttonlabels = string.(["<", roll_and_write_rolls[2][:, 1]..., ">"])
   buttons = buttongrid[1, 1:8] = [Button(fig, label = buttonlabels[i], height = 175, width = 200, textsize = 40.0f0, buttoncolor = cellcolors[i], buttoncolor_hover = cellcolors[i], strokecolor = :black) for i = 1:8]
   
-  # Back button decrements turn counter, plays silly message to tease players
+  # Back button decrements turn counter, reverts display to the appropriate turn
   on(buttons[1].clicks) do n
     global turn = turn
     if turn[1] >= 2
@@ -150,7 +150,7 @@ function play_roll_and_write(player_list::Array{String, 1})
 	  end
   end
   
-  # Forward button increments turn counter, plays chime to notify players
+  # Forward button increments turn counter, displays next set of rolls
   on(buttons[8].clicks) do n
     global turn = turn
     if turn[1] <= size(roll_and_write_rolls[2])[2]
